@@ -46,18 +46,18 @@
                             </div>
                             <div class="my-thumbnails position-relative">
     
-                                <div v-for='source in images' class="my-thumbnail active">
+                                <div v-for='(source, index) in images':class="(slide == index)?'active':''" class="my-thumbnail">
                                     <img class="img-fluid" :src="source.url" :alt="'Thumbnail of ' + source.title + ' picture'">
                                 </div>
     
     
                                 <!-- prev -->
-                                <div class="my-previous position-absolute">
+                                <div @click="prev" class="my-previous position-absolute">
                                     <span class="my-prev-hook"></span>
                                 </div>
                                 <!-- immagini interne -->
                                 <!-- next -->
-                                <div class="my-next position-absolute">
+                                <div @click="next" class="my-next position-absolute">
                                     <span class="my-next-hook"></span>
                                 </div>
                             </div>

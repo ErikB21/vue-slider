@@ -1,7 +1,7 @@
-const travel = new Vue({
+const travel = new Vue({//applico una casa Vue da collegare con il tag prescelto
     el: '#travel',
     data: {
-        slide: 0,
+        slide: 0,//il mio contatore che mi servirà da riferimento per manipolare il DOM
         images: [
             {
                 url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -31,5 +31,21 @@ const travel = new Vue({
                 description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
             },
         ]
+    },
+    methods:{ //gestisco i pulsanti per scorrere in avanti o indietro il carosello
+        next(){
+            if(this.slide == (this.images.length - 1)){
+                this.slide = 0;
+            }else{
+                this.slide++;
+            }
+        },
+        prev(){
+            if(this.slide == 0){
+                this.slide = this.images.length - 1;
+            }else{
+                this.slide--;
+            }
+        }
     }
 });
