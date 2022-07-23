@@ -31,15 +31,19 @@ const travel = new Vue({//applico una casa Vue da collegare con il tag prescelto
                 description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
             },
         ],
+        //definisco delle chiavi utili a impostare un setInterval sià per la foto principale, sia per le foto sotto
+        //in modo che al cambiare della foto principale, cambi anche quella sotto.
         timer: null,
         currentIndex: 0
     },
 
+    //richiamo il mio setInterval
     mounted: function() {
         this.startSlide();
     },
 
     methods:{ 
+        //funzione che mi permette di impostare un timer alle mie slide
         startSlide: function() {
             this.timer = setInterval(this.next, 4000);
         },
@@ -61,6 +65,7 @@ const travel = new Vue({//applico una casa Vue da collegare con il tag prescelto
             }
         }
     },
+    //gestisco l'avanzamento del tempo e quindi delle slide, con le slide più piccole in modo da renderle sincronizzate
     computed: {
         currentImg: function() {
           return this.images[Math.abs(this.currentIndex) % this.images.length];
