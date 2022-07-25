@@ -46,7 +46,7 @@
                             </div>
                             <div class="my-thumbnails position-relative">
     
-                                <div v-for='(source, index) in images':class="(slide == index)?'active':''" class="my-thumbnail" @click="setSlide(index)">
+                                <div v-for='(source, index) in images' :class="(slide == index)?'active':''" class="my-thumbnail" @click="setSlide(index)">
                                     <img class="img-fluid" :src="source.url" :alt="'Thumbnail of ' + source.title + ' picture'">
                                 </div>
     

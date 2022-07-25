@@ -31,9 +31,10 @@ const travel = new Vue({//applico una casa Vue da collegare con il tag prescelto
                 description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
             },
         ],
-        //definisco la chiave utile a impostare un setInterval sià per la foto principale, sia per le foto sotto
+        //definisco delle chiavi utili a impostare un setInterval sià per la foto principale, sia per le foto sotto
         //in modo che al cambiare della foto principale, cambi anche quella sotto.
         timer: null,
+        currentIndex: 0
     },
 
     //richiamo il mio setInterval
@@ -42,6 +43,7 @@ const travel = new Vue({//applico una casa Vue da collegare con il tag prescelto
     },
 
     methods:{ 
+
         setSlide(indice){
             this.slide = indice;
         },
